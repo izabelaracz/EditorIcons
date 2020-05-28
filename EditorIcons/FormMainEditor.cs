@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,12 +12,12 @@ using System.Windows.Forms;
 
 namespace EditorIcons
 {
-    public partial class Form1 : Form
+    public partial class FormMainEditor : Form
     {
         const int FieldSize = 20;
         DatabaseIconsDataContext DC = new DatabaseIconsDataContext();
 
-        public Form1()
+        public FormMainEditor()
         {
             InitializeComponent();
 
@@ -26,7 +27,7 @@ namespace EditorIcons
         private void LoadIconList(Icon selectedIcon = null)
         {
             comboBoxIconList.Items.Clear();
-            comboBoxIconList.Items.Add(DC.Icons.ToArray());
+            comboBoxIconList.Items.AddRange(DC.Icons.ToArray());
             if(selectedIcon != null)
             {
                 comboBoxIconList.SelectedItem = selectedIcon;
@@ -130,6 +131,40 @@ namespace EditorIcons
 
                 DC.SubmitChanges();
                 LoadIconList(selectedIcon);
+            }
+        }
+
+        private void nowaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Icon newIcon = new Icon();
+            newIcon.Name = "Nowa";
+            newIcon.Size = 10;
+
+            DC.Icons.InsertOnSubmit(newIcon);
+            DC.SubmitChanges();
+            LoadIconList(newIcon);
+        }
+
+        private void eksportujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (comboBoxIconList.SelectedItem != null)
+            {
+                Icon selectedIcon = comboBoxIconList.SelectedItem as Icon;
+
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Ikony|*.ico";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap ico = new Bitmap(selectedIcon.Size, selectedIcon.Size);
+                    Graphics graphics = Graphics.FromImage(ico);
+
+                    foreach (IconPoint ip in selectedIcon.IconPoints)
+                    {
+                        graphics.FillRectangle(new SolidBrush(Color.FromArgb(ip.Color)), ip.X, ip.Y, 1, 1);
+                    }
+
+                    ico.Save(dialog.FileName, ImageFormat.Icon);
+                }
             }
         }
     }
