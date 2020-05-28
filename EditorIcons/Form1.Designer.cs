@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PictureBoxIconEditor = new System.Windows.Forms.PictureBox();
+            this.buttonColor = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIconEditor)).BeginInit();
             this.SuspendLayout();
@@ -107,14 +110,34 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Rozmiar";
             // 
-            // pictureBox1
+            // PictureBoxIconEditor
             // 
-            this.PictureBoxIconEditor.Location = new System.Drawing.Point(12, 116);
-            this.PictureBoxIconEditor.Name = "pictureBox1";
+            this.PictureBoxIconEditor.Location = new System.Drawing.Point(15, 160);
+            this.PictureBoxIconEditor.Name = "PictureBoxIconEditor";
             this.PictureBoxIconEditor.Size = new System.Drawing.Size(202, 125);
             this.PictureBoxIconEditor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PictureBoxIconEditor.TabIndex = 6;
             this.PictureBoxIconEditor.TabStop = false;
+            this.PictureBoxIconEditor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxIconEditor_MouseDown);
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.BackColor = System.Drawing.Color.Red;
+            this.buttonColor.Location = new System.Drawing.Point(103, 105);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(120, 23);
+            this.buttonColor.TabIndex = 7;
+            this.buttonColor.UseVisualStyleBackColor = false;
+            this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Kolor";
             // 
             // Form1
             // 
@@ -123,6 +146,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonColor);
             this.Controls.Add(this.PictureBoxIconEditor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -148,6 +173,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox PictureBoxIconEditor;
+        private System.Windows.Forms.Button buttonColor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }
 
