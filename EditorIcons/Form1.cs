@@ -12,6 +12,7 @@ namespace EditorIcons
 {
     public partial class Form1 : Form
     {
+        const int FieldSize = 20;
         DatabaseIconsDataContext DC = new DatabaseIconsDataContext();
 
         public Form1()
@@ -38,6 +39,28 @@ namespace EditorIcons
                 Icon selectedIcon = comboBoxIconList.SelectedItem as Icon;
                 textBoxIconName.Text = selectedIcon.Name;
                 numericUpDownIconSize.Value = selectedIcon.Size;
+                RepaintIcon();
+            }
+        }
+
+        private void RepaintIcon()
+        {
+            if (comboBoxIconList.SelectedItem != null)
+            {
+                Icon selectedIcon = comboBoxIconList.SelectedItem as Icon;
+                
+                PictureBoxIconEditor.Image = new Bitmap(selectedIcon.Size * FieldSize, selectedIcon.Size * FieldSize);
+                Graphics g = Graphics.FromImage(PictureBoxIconEditor.Image);
+                
+                for(int x = 0; x < selectedIcon.Size; x++)
+                {
+                    for (int y = 0; y < selectedIcon.Size; y++)
+                    {
+                        g.DrawRectangle(new Pen(Color.Gray), x * FieldSize, y * FieldSize, FieldSize-1, FieldSize-1);
+                    }
+                }
+
+                PictureBoxIconEditor.Refresh();
             }
         }
 

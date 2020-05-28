@@ -34,7 +34,9 @@
             this.numericUpDownIconSize = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PictureBoxIconEditor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIconEditor)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxIconList
@@ -105,11 +107,23 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Rozmiar";
             // 
+            // pictureBox1
+            // 
+            this.PictureBoxIconEditor.Location = new System.Drawing.Point(12, 116);
+            this.PictureBoxIconEditor.Name = "pictureBox1";
+            this.PictureBoxIconEditor.Size = new System.Drawing.Size(202, 125);
+            this.PictureBoxIconEditor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureBoxIconEditor.TabIndex = 6;
+            this.PictureBoxIconEditor.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PictureBoxIconEditor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDownIconSize);
@@ -119,6 +133,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIconEditor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +147,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownIconSize;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox PictureBoxIconEditor;
     }
 }
 
