@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DatabaseIcons">
+  <DataContextMoniker Name="/DatabaseIconsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a42d598e-428f-4d88-a8bc-022aca048a14" absoluteBounds="1.125, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DatabaseIconsDataContext/Icon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df7a1abd-ef00-446e-9d49-4ba7f5d17eeb" absoluteBounds="1.1400000000000001, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a85e3e9-fb98-4306-9fd1-2be9c5f612c9" absoluteBounds="4.625, 1.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DatabaseIconsDataContext/IconPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91343642-dd0b-46cf-9069-d342b29c3dce" absoluteBounds="4.64, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 1.94314697265625); (4.625 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DatabaseIconsDataContext/Icon/Icon_IconPoint" />
+      <nodes>
+        <classShapeMoniker Id="a42d598e-428f-4d88-a8bc-022aca048a14" />
+        <classShapeMoniker Id="1a85e3e9-fb98-4306-9fd1-2be9c5f612c9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
