@@ -123,12 +123,10 @@ namespace EditorIcons
                     ip.X = e.X / FieldSize;
                     ip.Y = e.Y / FieldSize;
                     ip.Color = buttonColor.BackColor.ToArgb();
-
+                    ip.Icon = selectedIcon;
                     //połączenie z uwzględnieniem dwukierunkowej relacji - od drugiej strony relacji
                     //selectedIcon.IconPoints.Add(ip);
                 }
-
-                ip.Icon = selectedIcon;
 
                 DC.SubmitChanges();
                 LoadIconList(selectedIcon);
